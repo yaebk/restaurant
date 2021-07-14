@@ -3,18 +3,18 @@
 
 import time
 
-class restaurant:
-    type = "Japanese"
-    def __init__(self, name, owner, year, location, otime, ctime, starters, entrees, desserts):
-        self.name = "Mizaki"
-        self.owner = "Horu"
-        self.year = 2006
-        self.location = "Osaka"
-        self.otime = 200 #2pm
-        self.ctime = 1100 #11pm
-        self.starters = (("Miso soup", 3), ("takoyaki balls", 5))
-        self.entrees = (("eel over rice", 18), ("sushi", 12), ("ramen", 16), ("chicken katsu", 17))
-        self.desserts = (("mochi icecream", 6), ("dango", 4), ("daifuku", 7))
+    class restaurant:
+        type = "Japanese"
+        def __init__(self, name, owner, year, location, otime, ctime, starters, entrees, desserts):
+            self.name = "Mizaki"
+            self.owner = "Horu"
+            self.year = 2006
+            self.location = "Osaka"
+            self.otime = 200 #2pm
+            self.ctime = 1100 #11pm
+            self.starters = (("Miso soup", 3), ("takoyaki balls", 5))
+            self.entrees = (("eel over rice", 18), ("sushi", 12), ("ramen", 16), ("chicken katsu", 17))
+            self.desserts = (("mochi icecream", 6), ("dango", 4), ("daifuku", 7))
 
     def welcome(self):
         arrival = int(input("What time is it?"))
@@ -62,13 +62,13 @@ class restaurant:
             
         print(f"Thank you for coming, here is the check with the tax and tip included:\nTotal - ${total}\nHave a nice day!")
 
-def main():
-    Mizaki = restaurant('Mizaki', 'Horu', 2006, 'Osaka', 200, 1100, (("Miso soup", 3), ("takoyaki balls", 5)), (("eel over rice", 18), ("sushi", 12), ("ramen", 16), ("chicken katsu", 17)), (("mochi icecream", 6), ("dango", 4), ("daifuku", 7)))
-    if Mizaki.welcome():
-        order = Mizaki.server("Hoshi")
-        for i in order:
-            Mizaki.chef(i)
-            Mizaki.eating(i)
-        Mizaki.goodbye(order)
-    else:
-        print("You came at a wrong time, please come during opperating store hours.")
+    def main():
+        Mizaki = restaurant('Mizaki', 'Horu', 2006, 'Osaka', 200, 1100, (("Miso soup", 3), ("takoyaki balls", 5)), (("eel over rice", 18), ("sushi", 12), ("ramen", 16),                 ("chicken katsu", 17)), (("mochi icecream", 6), ("dango", 4), ("daifuku", 7)))
+        if Mizaki.welcome():
+            order = Mizaki.server("Hoshi")
+            for i in order:
+                Mizaki.chef(i)
+                Mizaki.eating(i)
+            Mizaki.goodbye(order)
+        else:
+            print("You came at a wrong time, please come during opperating store hours.")
